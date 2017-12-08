@@ -32,9 +32,9 @@ public class Reception extends Thread {
 					buffer.addCommonPoolQueue(new Visitor(rand.nextBoolean()));
 					lblWcom.setText("" + buffer.getCommonPoolQueueSize());
 				}
-				Thread.sleep(rand.nextInt(1000));
+				sleep(500);
 			} catch (InterruptedException e) {
-
+				System.out.println("CommonPoolThread InterruptedException");
 			}
 		}
 	}

@@ -6,4 +6,8 @@ public class Visitor {
 	public Visitor(boolean VIP) {
 		this.VIP = VIP;
 	}
+	
+	public boolean isVIP() {
+		return VIP;
+	}
 }

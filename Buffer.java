@@ -77,6 +77,7 @@ public class Buffer {
 
 	public synchronized Visitor getCommonPoolVisiter() throws InterruptedException {
 		while (commonPool.isEmpty()) {
+			System.out.println("deadlock i commonPool");
 			wait();
 		}
 		Visitor v = commonPool.removeFirst();

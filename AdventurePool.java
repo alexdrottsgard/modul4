@@ -1,5 +1,7 @@
 package modul4;
 
+import java.util.Random;
+
 import javax.swing.JLabel;
 
 public class AdventurePool extends Thread {
@@ -8,6 +10,7 @@ public class AdventurePool extends Thread {
 
 	private Buffer buffer;
 	private JLabel lblAdvNr;
+	private Random rand = new Random();
 
 	public AdventurePool(Buffer buffer, JLabel lblAdv, JLabel lblAdvLim, int limit) {
 		this.buffer = buffer;
@@ -19,19 +22,20 @@ public class AdventurePool extends Thread {
 
 	@Override
 	public void run() {
-		int v = 0;
 		while (buffer.getAdventurePoolSize() < limit) {
 			try {
 				System.out.println("AdventurePool");
+
 				buffer.addAdventurePoolVisiter(buffer.getAdventurePoolQueue());
-//				v = buffer.getAdventurePoolSize();
+				// v = buffer.getAdventurePoolSize();
 				lblAdvNr.setText("" + buffer.getAdventurePoolSize());
 				System.out.println(lblAdvNr.getText());
-				sleep(500);
-			}catch (InterruptedException e) {
-				
+
+				sleep(1000);
+			} catch (InterruptedException e) {
+				System.out.println("CommonPoolThread InterruptedException");
 			}
-			
+
 		}
 	}
 }
