@@ -83,6 +83,8 @@ public class GUISwimmingpool
 		btnOpen = new JButton("Open Pool");
 		btnOpen.setBounds(29, 181, 120, 23);
 		pnlRec.add(btnOpen);
+		
+		//
 		btnOpen.addActionListener(e -> {
 			Buffer buffer = new Buffer();
 			new Reception(buffer, lblWadv, lblWcom);
